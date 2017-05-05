@@ -12,7 +12,7 @@ module AjaxRender
 
       partial = render_to_string(partial: partial_name, locals: options[:locals])
       render js: <<-EOS.gsub(/^ */, '')
-        $(#{target}).html('#{escape_javascript partial}');
+        $(#{target}).html('#{partial}');
       EOS
     end
   end
